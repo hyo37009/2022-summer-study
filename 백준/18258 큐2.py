@@ -19,7 +19,8 @@ if __name__ == "__main__":
             if not elements:
                 print(-1)
             else:
-                print(elements.pop())
+                print(elements[0])
+                elements = elements[1:]
         elif what == 'size':
             print(len(elements))
         elif what == 'empty':
