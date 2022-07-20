@@ -7,34 +7,38 @@ import sys
 if __name__ == "__main__":
     elements = []
     k = int(input())
+    leng = 0
 
     for i in range(k):
         now = list(sys.stdin.readline().rstrip().split())
-        # print(now)
+        printing = []
 
         what = now[0]
         if what == 'push':
-            elements.append(int(now[1]))
+            elements.append(now[1])
+            leng += 1
         elif what == 'pop':
             if not elements:
-                print(-1)
+                printing.append(-1)
             else:
-                print(elements[0])
+                printing.append(elements[0])
                 elements = elements[1:]
         elif what == 'size':
-            print(len(elements))
+            printing.append(str(leng))
         elif what == 'empty':
             if elements:
-                print(0)
+                printing.append(0)
             else:
-                print(1)
+                printing.append(1)
         elif what == 'front':
             if not elements:
-                print(-1)
+                printing.append(-1)
             else:
-                print(elements[0])
+                printing.append(elements[0])
         else:
             if not elements:
-                print(-1)
+                printing.append(-1)
             else:
-                print(elements[-1])
+                printing.append(elements[-1])
+
+    print(printing)
