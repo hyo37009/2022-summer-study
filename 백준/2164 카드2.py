@@ -1,8 +1,12 @@
-n = int(input())
-nums = list(range(1, n+1))
+from collections import deque
+
+nums = deque()
+
+num = int(input())
+nums += list(range(1, num+1))
 
 while len(nums) > 1:
-    nums.pop(0)
-    nums.append(nums.pop(0))
+    nums.popleft()
+    nums.append(nums.popleft())
 
 print(nums[0])
